@@ -21,7 +21,7 @@ backend/**/__pycache__/
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.ideag
 .DS_Store
 *.suo
 *.ntvs*
