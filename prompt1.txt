@@ -1,0 +1,368 @@
+Build a frontend-only web app in React using shadcn/ui, Tailwind CSS, and TypeScript.
+
+Goal:
+Create a visually clear, professional, roadmap.sh-inspired interface for an “AI Integration Roadmap for Businesses”.
+This is not a generic mind map. It is a structured, zoomable, browsable knowledge and decision map that helps business and technical users understand how AI can be introduced into existing company workflows.
+
+Important:
+- No backend
+- No authentication
+- No database
+- No API calls
+- Use static mock data inside the app
+- The app must feel polished, modern, easy to scan, and highly useful visually
+- The UI should prioritize clarity over decoration
+- The result should be easy to extend later with real data
+
+Tech requirements:
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
+- Use lucide-react for icons
+- Use Framer Motion for subtle animations
+- Prefer a clean modular component structure
+- Build everything in one frontend app
+- No external graph libraries unless truly necessary; prefer custom layout with standard React + CSS
+- Make code production-style, readable, and componentized
+
+Core product idea:
+The page represents a structured roadmap similar in spirit to roadmap.sh, but focused on business AI integration.
+It should visually explain:
+1. business problems
+2. use cases
+3. architecture
+4. integrations
+5. memory/context
+6. execution patterns
+7. trust/governance
+8. measurement
+9. rollout
+
+The roadmap should support both:
+- waterfall-style understanding from top to bottom
+- parallel tracks such as business, technical, AI capability, governance
+
+Design philosophy:
+- Users must understand the structure within seconds
+- The app should feel like a strategic map, not a random canvas
+- It should be useful for consultants, founders, product people, technical architects, and operations leaders
+- It must feel more like a “decision map” than a learning article
+- Every visual choice should improve comprehension
+- Dense information is okay, but must remain highly navigable
+
+Overall layout:
+Create a single-page application with the following major zones:
+
+1. Top header
+- Product title: “AI Integration Roadmap”
+- Small subtitle explaining that this is a strategic map for introducing AI into business workflows
+- Search input
+- View mode toggle
+- Legend button
+- Filters button
+
+2. Main roadmap canvas area
+- The core of the page
+- Large scrollable and responsive layout
+- Structured into horizontal sections or vertical layers
+- Must visually show both:
+  - layers (Problem, Use Case, Architecture, etc.)
+  - tracks (Business, Technical, AI, Governance)
+- Use cards/nodes arranged in a grid or flow-based layout
+- Use arrows, connectors, or subtle visual linking where helpful
+- Should resemble roadmap.sh in clarity and flow, but can be more card-based and enterprise-friendly
+
+3. Right-side detail panel or modal drawer
+- Opens when clicking a node
+- Shows rich details about the selected item
+- Should feel like a knowledge inspector
+- Easy to scan
+- Includes sections like description, why it matters, dependencies, risks, metrics, examples, maturity model
+
+4. Optional compact overview/minimap panel
+- Shows the big picture
+- Helps users understand where they are in the roadmap
+- Can be simplified if needed, but include at least some summary aid for orientation
+
+Required information architecture:
+The roadmap data model should support these concepts:
+
+Node fields:
+- id
+- title
+- shortDescription
+- fullDescription
+- layer
+- track
+- type
+- dependencies
+- maturityLevels
+- tools
+- risks
+- metrics
+- examples
+- tags
+- importance
+- complexity
+
+Layers:
+- Problem & Opportunity
+- Use Case Design
+- Architecture
+- Integration
+- Memory & Context
+- Execution
+- Trust & Control
+- Measurement
+- Rollout
+
+Tracks:
+- Business
+- Technical
+- AI Capability
+- Governance
+
+Node types:
+- problem
+- use_case
+- decision
+- component
+- integration
+- pattern
+- metric
+- risk
+- guardrail
+
+Maturity levels:
+- Manual
+- Assist
+- Semi-Automated
+- Fully Automated
+- Autonomous
+
+Content:
+Populate the app with a meaningful mock dataset, not lorem ipsum.
+Create at least 20–30 realistic nodes across the layers.
+Examples of node topics:
+- Email overload
+- Lead response delay
+- Support triage
+- Invoice processing
+- AI drafting replies
+- Human-in-the-loop approval
+- LLM decision layer
+- Rules engine
+- CRM integration
+- ERP integration
+- Session memory
+- Business memory
+- Event-driven execution
+- Audit logging
+- Rollout with pilot team
+- ROI tracking
+- Error rate measurement
+
+Required views:
+Implement at least these view modes:
+
+1. Layered View
+- Main default
+- Rows = layers
+- Columns = tracks
+- Nodes appear where they belong
+- Easy to scan top-to-bottom and left-to-right
+
+2. Flow View
+- Focus on dependency chains
+- Better for understanding progression from problem to rollout
+- Show clearer connectors between nodes
+
+3. Compact View
+- Denser view for experienced users
+- Smaller cards
+- Better for browsing more nodes quickly
+
+Filtering:
+Include a filter system for:
+- Track
+- Layer
+- Node type
+- Complexity
+- Maturity
+- Search text
+
+Legend:
+Add a legend explaining:
+- colors or accents by track
+- icons by node type
+- maturity chips
+- dependency markers
+
+Behavior requirements:
+- Clicking a node opens details in side panel or drawer
+- Hovering a node should subtly highlight it and optionally its dependencies
+- Selecting a node should visually emphasize related nodes
+- Search should filter in real time
+- Filters should combine cleanly
+- Empty states should be friendly and useful
+- Transitions should be smooth but subtle
+- The app must remain understandable on first use
+
+Visual behavior:
+- Keep the interface clean and calm
+- Use spacing, grouping, and typography to make complexity digestible
+- Avoid visual clutter
+- Use cards with rounded corners, light shadows, and strong hierarchy
+- Use color sparingly and meaningfully
+- Important nodes should stand out without being flashy
+- Connections should help understanding, not create noise
+
+Accessibility and UX:
+- Keyboard-friendly where practical
+- Good contrast
+- Responsive for desktop first, but usable on tablet
+- On mobile, collapse roadmap into stacked sections rather than forcing a giant unusable canvas
+- Side panel should become a bottom drawer or full-screen sheet on smaller screens
+- Text should remain readable at all times
+- No tiny labels that require zooming
+
+Shadcn/ui components to use where appropriate:
+- Card
+- Button
+- Input
+- Badge
+- Tabs
+- Sheet
+- Dialog
+- Tooltip
+- Separator
+- ScrollArea
+- Collapsible
+- DropdownMenu
+- Select
+- Command
+- Accordion
+
+Suggested component architecture:
+Create reusable components such as:
+- AppShell
+- RoadmapHeader
+- RoadmapToolbar
+- RoadmapLegend
+- RoadmapCanvas
+- LayerSection
+- TrackColumn
+- RoadmapNodeCard
+- DependencyConnector
+- DetailPanel
+- NodeMetaSection
+- FilterPanel
+- SearchBar
+- ViewModeToggle
+- MaturityBadge
+- TrackBadge
+- EmptyState
+- OverviewMiniMap
+
+Important card behavior:
+Each roadmap node card should show:
+- title
+- type icon
+- short description
+- track badge
+- maturity badge
+- dependency count or relation hint if relevant
+
+When expanded in detail panel, show:
+- title
+- full description
+- why it matters
+- when to use
+- dependencies
+- related nodes
+- risks
+- tools or systems involved
+- metrics to track
+- maturity journey
+- one realistic business example
+
+Styling guidance:
+- Modern SaaS / strategy tool feel
+- Professional, minimal, clear
+- More like a premium internal planning tool than a playful mind map
+- Use typography hierarchy carefully
+- Section titles should be prominent
+- Nodes should be easy to differentiate without overwhelming color use
+- Favor soft borders, muted backgrounds, and clean spacing
+- Use sticky headers where helpful
+- Use subtle animations for hover, panel open, filter changes, and selected state
+
+Important implementation guidance:
+- Keep data separate from UI
+- Use a dedicated mock data file
+- Use derived selectors/helpers for filtering and grouping
+- Avoid hardcoding layout too much
+- Make it easy to replace mock data later
+- Keep code modular and maintainable
+- Add clear inline comments only where useful
+- Avoid overengineering
+
+Layout logic:
+For the Layered View:
+- Render sections by layer
+- Within each layer, group by track
+- Nodes can span multiple tracks if needed, but keep display simple
+- If a node belongs to multiple tracks, visually indicate it with secondary badges or subtle multi-track markers
+
+For the Flow View:
+- Show selected or featured paths
+- Example path:
+  Problem → Use Case → Architecture → Integration → Execution → Trust → Measurement → Rollout
+- Keep it readable and not overly diagrammatic
+
+Initial default state:
+- Start in Layered View
+- Show all layers
+- Show 1 selected “featured path” near the top as an example
+- Preload with one highlighted use case, such as “Auto-follow-up on inbound leads”
+
+Usefulness requirements:
+The app should teach by structure.
+A user should be able to answer questions like:
+- Where do I start with AI in my business?
+- What comes after identifying a use case?
+- What technical components are needed?
+- Where do governance and approval fit?
+- How do I measure ROI?
+- How does a use case mature from manual to autonomous?
+
+Do not build a generic dashboard.
+Do not build a generic kanban board.
+Do not build a random network graph with messy lines everywhere.
+Build a structured, strategic roadmap product.
+
+Deliverables:
+- Full React code
+- Modular components
+- Static mock data included
+- Polished single-page UI
+- Sensible default styling
+- No backend
+- No fake loading spinners unless used intentionally for polish
+- Ensure code is ready to run locally
+
+Also:
+- Include a small set of helper utilities for grouping, filtering, and relationship highlighting
+- Include at least one empty state and one no-results filter state
+- Include a polished default theme
+- Make the final result feel complete, not like a rough scaffold
+
+Before coding, think carefully about:
+- information hierarchy
+- scanability
+- how roadmap.sh feels easy even when dense
+- how enterprise users trust clear structure
+- how to make the page visually useful in under 10 seconds
+
+Now produce the app code.
