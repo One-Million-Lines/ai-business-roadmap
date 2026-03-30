@@ -61,7 +61,7 @@ export function OverviewMiniMap({ nodes, totalNodes }: OverviewMiniMapProps) {
       <div className="border-t pt-2 space-y-1">
         <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">Tracks</span>
         <div className="grid grid-cols-2 gap-1">
-          {(["Business", "Technical", "AI Capability", "Governance"] as const).map((track) => (
+          {(["Business", "Technical", "AI Capability", "Governance", "Enablement"] as const).map((track) => (
             <div key={track} className="flex items-center gap-1.5">
               <div className={cn("h-2 w-2 rounded-full flex-shrink-0", TRACK_DOT_COLORS[track])} />
               <span className="text-[10px] text-muted-foreground truncate">{track}</span>

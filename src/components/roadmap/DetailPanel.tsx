@@ -59,7 +59,7 @@ export function DetailPanel({ node, open, onClose, onSelectNode }: DetailPanelPr
                 </Badge>
               </div>
               <SheetTitle className="text-lg">{node.title}</SheetTitle>
-              <SheetDescription className="text-sm leading-relaxed">
+              <SheetDescription className="text-sm leading-relaxed whitespace-pre-line">
                 {node.fullDescription}
               </SheetDescription>
             </SheetHeader>

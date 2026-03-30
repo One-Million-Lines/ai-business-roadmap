@@ -228,6 +228,22 @@ export default function App() {
           </SheetContent>
         </Sheet>
       </div>
+
+      {/* ── Footer ── */}
+      <footer className="border-t bg-muted/30 py-4 text-center text-xs text-muted-foreground">
+        Built by{" "}
+        <a
+          href="https://linkedin.com/in/alexrada"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-medium text-foreground hover:text-primary transition-colors"
+        >
+          Alex Rada
+        </a>
+        {" "}Get in touch if you want to contribute, give feedback, or share how you used the roadmap!{" "}
+        <span className="mx-1">·</span>
+        <span>v{APP_VERSION}</span>
+      </footer>
     </TooltipProvider>
   );
 }

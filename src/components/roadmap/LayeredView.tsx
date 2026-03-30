@@ -5,7 +5,7 @@ import { getLayerIcon } from "./icons";
 import { cn } from "@/lib/utils";
 
 const LEFT_TRACKS = ["Business", "Technical"] as const;
-const RIGHT_TRACKS = ["AI Capability", "Governance"] as const;
+const RIGHT_TRACKS = ["AI Capability", "Governance", "Enablement"] as const;
 
 interface LayeredViewProps {
   nodes: RoadmapNode[];

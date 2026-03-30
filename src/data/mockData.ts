@@ -10,6 +10,7 @@ import {
   trustControlNodes,
   measurementNodes,
   rolloutNodes,
+  enablementNodes,
 } from "./layers";
 
 /**
@@ -27,4 +28,5 @@ export const roadmapNodes: RoadmapNode[] = [
   ...trustControlNodes,
   ...measurementNodes,
   ...rolloutNodes,
+  ...enablementNodes,
 ];

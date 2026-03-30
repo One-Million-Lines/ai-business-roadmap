@@ -12,7 +12,7 @@ interface ViewModeToggleProps {
 const modes: { value: ViewMode; icon: React.ComponentType<any>; label: string }[] = [
   { value: "layered", icon: Layers, label: "Layered View" },
   { value: "flow", icon: GitBranch, label: "Flow View" },
-  { value: "compact", icon: LayoutGrid, label: "Compact View" },
+  // { value: "compact", icon: LayoutGrid, label: "Compact View" },
 ];
 
 export function ViewModeToggle({ mode, onChange }: ViewModeToggleProps) {

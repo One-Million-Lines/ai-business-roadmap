@@ -16,3 +16,4 @@ export { executionNodes } from "./07-execution-pilot";
 export { trustControlNodes } from "./08-trust-risk-governance";
 export { measurementNodes } from "./09-measurement-learning";
 export { rolloutNodes } from "./10-rollout-adoption-scaling";
+export { enablementNodes } from "./enablement-change-management";
