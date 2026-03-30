@@ -8,7 +8,7 @@ import {
 import { Map, Filter, Info } from "lucide-react";
 import { roadmapNodes } from "@/data/mockData";
 import {
-  RoadmapNode, ViewMode, FilterState, FEATURED_PATH,
+  RoadmapNode, Layer, ViewMode, FilterState, FEATURED_PATH,
 } from "@/data/types";
 import {
   filterNodes, getRelatedNodes, emptyFilters, hasActiveFilters,
@@ -19,6 +19,8 @@ import { FilterPanel } from "@/components/roadmap/FilterPanel";
 import { RoadmapLegend } from "@/components/roadmap/RoadmapLegend";
 import { DetailPanel } from "@/components/roadmap/DetailPanel";
 import { LayeredView } from "@/components/roadmap/LayeredView";
+import { LayerDetailPanel } from "@/components/roadmap/LayerDetailPanel";
+import { layerDetails } from "@/data/layerDetails";
 import { FlowView } from "@/components/roadmap/FlowView";
 import { CompactView } from "@/components/roadmap/CompactView";
 import { OverviewMiniMap } from "@/components/roadmap/OverviewMiniMap";
@@ -30,6 +32,7 @@ export default function App() {
   const [hoveredNodeId, setHoveredNodeId] = useState<string | null>(null);
   const [showFilters, setShowFilters] = useState(false);
   const [showLegend, setShowLegend] = useState(false);
+  const [selectedLayer, setSelectedLayer] = useState<Layer | null>(null);
 
   const filteredNodes = useMemo(
     () => filterNodes(roadmapNodes, filters),
@@ -59,6 +62,14 @@ export default function App() {
     setFilters(emptyFilters);
   }, []);
 
+  const handleLayerClick = useCallback((layer: Layer) => {
+    setSelectedLayer(layer);
+  }, []);
+
+  const handleCloseLayerDetail = useCallback(() => {
+    setSelectedLayer(null);
+  }, []);
+
   const activeFilterCount = [
     filters.tracks.length,
     filters.layers.length,
@@ -79,7 +90,7 @@ export default function App() {
                   <Map className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <div>
-                  <h1 className="text-lg font-bold tracking-tight">AI Integration Roadmap</h1>
+                  <h1 className="text-lg font-bold tracking-tight">AI Business Roadmap</h1>
                   <p className="text-xs text-muted-foreground">
                     Strategic map for introducing AI into business workflows
                   </p>
@@ -149,6 +160,7 @@ export default function App() {
                   onSelectNode={handleSelectNode}
                   onHoverNode={setHoveredNodeId}
                   onResetFilters={handleResetFilters}
+                  onLayerClick={handleLayerClick}
                 />
               )}
               {viewMode === "flow" && (
@@ -187,7 +199,10 @@ export default function App() {
 
         {/* ── Filter Sheet ── */}
         <Sheet open={showFilters} onOpenChange={setShowFilters}>
-          <SheetContent side="right" className="w-full sm:max-w-sm">
+          <SheetContent side="right" className="w-full sm:max-w-sm" aria-describedby={undefined}>
+            <SheetHeader className="sr-only">
+              <SheetTitle>Filters</SheetTitle>
+            </SheetHeader>
             <FilterPanel
               filters={filters}
               onChange={setFilters}
@@ -195,6 +210,13 @@ export default function App() {
             />
           </SheetContent>
         </Sheet>
+
+        {/* ── Layer Detail Panel ── */}
+        <LayerDetailPanel
+          detail={selectedLayer ? layerDetails[selectedLayer] : null}
+          open={!!selectedLayer}
+          onClose={handleCloseLayerDetail}
+        />
 
         {/* ── Legend Sheet ── */}
         <Sheet open={showLegend} onOpenChange={setShowLegend}>

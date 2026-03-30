@@ -366,3 +366,93 @@ Before coding, think carefully about:
 - how to make the page visually useful in under 10 seconds
 
 Now produce the app code.
+
+
+
+
+
+
+
+
+
+
+Which functions should the AI strategy cover?
+
+Enterprise-wide
+Operations / Supply Chain
+Customer Service / CX
+Sales & Marketing
+Finance & Admin
+Product / R&D
+Etwas anderes
+
+
+
+What should the strategy deliver?
+Use case prioritization
+Build / Buy / Partner recommendations
+Governance & risk framework
+ROI model
+12-month roadmap
+
+
+
+
+How would you describe your current AI / data maturity?
+Early — little data infrastructure, no AI in use
+Developing — some data systems, maybe one AI tool (e.g. Copilot)
+Intermediate — structured data, a few AI pilots underway
+Advanced — production AI systems, dedicated data team
+
+
+
+
+
+What are your biggest constraints?
+Tight budget (under €200k)
+No internal AI / ML talent
+Regulated industry (compliance-heavy)
+Leadership won't touch headcount optics
+Fragmented or poor-quality data
+Legacy tech stack
+
+
+
+
+How will you know this strategy was worth it?
+Measurable cost reduction
+Revenue or conversion uplift
+Faster time-to-market
+Reduced manual / repetitive work
+Competitive differentiation
+Better customer experience scores
+
+
+
+
+
+What industry are you in?
+Manufacturing / Industrial
+Retail / E-commerce
+Professional Services (consulting, legal, accounting)
+Healthcare / Life Sciences
+Financial Services / Insurance
+
+
+
+What is your primary strategic pressure right now?
+Cut costs to protect margins
+Grow faster than competitors
+Improve customer retention
+Launch new products or services faster
+
+
+
+What is the size of the company
+1–10 (startup)
+11–50 (small)
+51–200 (growing)
+100–500 (mid-size) ← what you picked
+500–1000
+1000–5000
+5000+

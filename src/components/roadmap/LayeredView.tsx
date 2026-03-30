@@ -1,4 +1,4 @@
-import { RoadmapNode, LAYERS, TRACK_DOT_COLORS, FEATURED_PATH } from "@/data/types";
+import { RoadmapNode, Layer, LAYERS, TRACK_DOT_COLORS, FEATURED_PATH } from "@/data/types";
 import { groupByLayer } from "@/data/helpers";
 import { EmptyState } from "./EmptyState";
 import { getLayerIcon } from "./icons";
@@ -15,6 +15,7 @@ interface LayeredViewProps {
   onSelectNode: (node: RoadmapNode) => void;
   onHoverNode: (nodeId: string | null) => void;
   onResetFilters: () => void;
+  onLayerClick?: (layer: Layer) => void;
 }
 
 export function LayeredView({
@@ -25,6 +26,7 @@ export function LayeredView({
   onSelectNode,
   onHoverNode,
   onResetFilters,
+  onLayerClick,
 }: LayeredViewProps) {
   const byLayer = groupByLayer(nodes);
 
@@ -54,11 +56,14 @@ export function LayeredView({
           <section key={layer} id={`layer-${layerIdx}`} className="relative mb-4">
             {/* ── Layer header on spine ── */}
             <div className="relative z-10 flex justify-center mb-4">
-              <div className="flex items-center gap-2 rounded-lg border-2 border-amber-300 bg-amber-50 px-5 py-2 shadow-sm">
+              <button
+                className="flex items-center gap-2 rounded-lg border-2 border-amber-300 bg-amber-50 px-5 py-2 shadow-sm cursor-pointer transition-all hover:shadow-md hover:border-amber-400 hover:bg-amber-100/70"
+                onClick={() => onLayerClick?.(layer)}
+              >
                 <LayerIcon className="h-4 w-4 text-amber-600" />
                 <span className="text-sm font-semibold text-amber-900">{layer}</span>
                 <span className="text-xs text-amber-600/70">({layerNodes.length})</span>
-              </div>
+              </button>
             </div>
 
             {/* ── Branching nodes ── */}
