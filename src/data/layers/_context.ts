@@ -12,19 +12,25 @@
  * │  IMPORTANT: This roadmap is intentionally generic. Each node should       │
  * │  be adapted to the specific business context, industry regulations,       │
  * │  existing tech stack, and organizational maturity of the adopting company. │
+ * │                                                                           │
+ * │  KEY PRINCIPLE: A lot of AI projects fail because the process itself is   │
+ * │  messy, inconsistent, or politically unclear. Not all good AI demos are   │
+ * │  good business use cases. A use case is good only if it can survive real  │
+ * │  workflows, real exceptions, and real owners.                             │
  * └─────────────────────────────────────────────────────────────────────────────┘
  *
  * LAYER PROGRESSION (top → bottom, each builds on the previous):
  *
- *   Layer 1: Problem & Opportunity    → Identify pain points and business cases
- *   Layer 2: Use Case Design          → Design specific AI solutions for those problems
- *   Layer 3: Architecture             → Define the technical backbone (LLM, rules, orchestration)
- *   Layer 4: Integration              → Connect AI to existing systems (CRM, ERP, comms)
- *   Layer 5: Memory & Context         → Give AI persistent knowledge and personalization
- *   Layer 6: Execution                → Define how AI workflows are triggered and run
- *   Layer 7: Trust & Control          → Governance, guardrails, human oversight, privacy
- *   Layer 8: Measurement              → Track ROI, errors, adoption, and quality
- *   Layer 9: Rollout                  → Pilot, scale, and manage organizational change
+ *   Layer 1:  Problem, Opportunity & Scope         → Define business outcomes, functions in scope, pain points, baselines
+ *   Layer 2:  Use Case Discovery & Prioritization  → Discover, rank, and separate quick wins from strategic bets
+ *   Layer 3:  Decision Model & Operating Model     → Define who decides (human, AI, hybrid), accountability, governance
+ *   Layer 4:  Data, Knowledge, Memory & Context    → What the system needs to know to act correctly
+ *   Layer 5:  Solution Architecture                → Core systems, model layer, orchestration, tools, observability
+ *   Layer 6:  Integration & Process Embedding      → System integration + workflow integration (where AI shows up in work)
+ *   Layer 7:  Execution & Pilot Design             → Pilot specific workflows with measurable outcomes
+ *   Layer 8:  Trust, Risk, Governance & Control     → Operational safety, accountability, explainability, compliance
+ *   Layer 9:  Measurement & Learning Loop          → Business outcomes, adoption, quality, drift, correction patterns
+ *   Layer 10: Rollout, Adoption & Scaling          → Phased rollout, enablement, champions, platform ownership, reuse
  *
  * TRACKS (cross-cutting concerns across all layers):
  *
@@ -53,8 +59,16 @@
  *
  * DEPENDENCY FLOW:
  *   Nodes reference upstream dependencies by ID. The general flow is:
- *   Problems → Use Cases → Architecture → Integration → Memory → Execution → Trust → Measurement → Rollout
- *   But cross-layer dependencies exist (e.g., Trust nodes depend on Architecture).
+ *   Problems → Use Cases → Decision Model → Data/Knowledge → Architecture →
+ *   Integration → Execution/Pilot → Trust/Governance → Measurement → Rollout
+ *   Cross-layer dependencies exist (e.g., Trust nodes depend on Architecture).
+ *
+ * KEY DISTINCTIONS:
+ *   context  = what is needed right now for this task
+ *   memory   = what should persist and influence future actions
+ *   knowledge base = official business information or shared reference data
+ *
+ *   AI suggests → AI drafts → AI acts with approval → AI acts autonomously in bounded scenarios
  */
 
 export {};

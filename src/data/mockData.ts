@@ -1,10 +1,11 @@
 import { RoadmapNode } from "./types";
 import {
   problemOpportunityNodes,
-  useCaseDesignNodes,
+  useCaseDiscoveryNodes,
+  decisionModelNodes,
+  dataKnowledgeMemoryNodes,
   architectureNodes,
   integrationNodes,
-  memoryContextNodes,
   executionNodes,
   trustControlNodes,
   measurementNodes,
@@ -17,10 +18,11 @@ import {
  */
 export const roadmapNodes: RoadmapNode[] = [
   ...problemOpportunityNodes,
-  ...useCaseDesignNodes,
+  ...useCaseDiscoveryNodes,
+  ...decisionModelNodes,
+  ...dataKnowledgeMemoryNodes,
   ...architectureNodes,
   ...integrationNodes,
-  ...memoryContextNodes,
   ...executionNodes,
   ...trustControlNodes,
   ...measurementNodes,

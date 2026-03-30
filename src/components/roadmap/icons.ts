@@ -18,15 +18,16 @@ const nodeTypeIcons: Record<NodeType, React.ComponentType<any>> = {
 };
 
 const layerIcons: Record<Layer, React.ComponentType<any>> = {
-  "Problem & Opportunity": AlertTriangle,
-  "Use Case Design": Lightbulb,
-  Architecture: Layers,
-  Integration: Plug,
-  "Memory & Context": Brain,
-  Execution: Play,
-  "Trust & Control": Shield,
-  Measurement: BarChart3,
-  Rollout: Rocket,
+  "Problem, Opportunity & Scope": AlertTriangle,
+  "Use Case Discovery & Prioritization": Lightbulb,
+  "Decision Model & Operating Model": GitBranch,
+  "Data, Knowledge, Memory & Context": Brain,
+  "Solution Architecture": Layers,
+  "Integration & Process Embedding": Plug,
+  "Execution & Pilot Design": Play,
+  "Trust, Risk, Governance & Control": Shield,
+  "Measurement & Learning Loop": BarChart3,
+  "Rollout, Adoption & Scaling": Rocket,
 };
 
 export function getNodeTypeIcon(type: NodeType) {

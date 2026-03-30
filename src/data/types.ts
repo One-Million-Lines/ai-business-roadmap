@@ -1,13 +1,14 @@
 export type Layer =
-  | "Problem & Opportunity"
-  | "Use Case Design"
-  | "Architecture"
-  | "Integration"
-  | "Memory & Context"
-  | "Execution"
-  | "Trust & Control"
-  | "Measurement"
-  | "Rollout";
+  | "Problem, Opportunity & Scope"
+  | "Use Case Discovery & Prioritization"
+  | "Decision Model & Operating Model"
+  | "Data, Knowledge, Memory & Context"
+  | "Solution Architecture"
+  | "Integration & Process Embedding"
+  | "Execution & Pilot Design"
+  | "Trust, Risk, Governance & Control"
+  | "Measurement & Learning Loop"
+  | "Rollout, Adoption & Scaling";
 
 export type Track = "Business" | "Technical" | "AI Capability" | "Governance";
 
@@ -49,15 +50,16 @@ export interface RoadmapNode {
 export type ViewMode = "layered" | "flow" | "compact";
 
 export const LAYERS: Layer[] = [
-  "Problem & Opportunity",
-  "Use Case Design",
-  "Architecture",
-  "Integration",
-  "Memory & Context",
-  "Execution",
-  "Trust & Control",
-  "Measurement",
-  "Rollout",
+  "Problem, Opportunity & Scope",
+  "Use Case Discovery & Prioritization",
+  "Decision Model & Operating Model",
+  "Data, Knowledge, Memory & Context",
+  "Solution Architecture",
+  "Integration & Process Embedding",
+  "Execution & Pilot Design",
+  "Trust, Risk, Governance & Control",
+  "Measurement & Learning Loop",
+  "Rollout, Adoption & Scaling",
 ];
 
 export const TRACKS: Track[] = ["Business", "Technical", "AI Capability", "Governance"];
@@ -93,15 +95,16 @@ export const TRACK_BORDER_COLORS: Record<Track, string> = {
 };
 
 export const LAYER_ICONS: Record<Layer, string> = {
-  "Problem & Opportunity": "AlertTriangle",
-  "Use Case Design": "Lightbulb",
-  Architecture: "Layers",
-  Integration: "Plug",
-  "Memory & Context": "Brain",
-  Execution: "Play",
-  "Trust & Control": "Shield",
-  Measurement: "BarChart3",
-  Rollout: "Rocket",
+  "Problem, Opportunity & Scope": "AlertTriangle",
+  "Use Case Discovery & Prioritization": "Lightbulb",
+  "Decision Model & Operating Model": "GitBranch",
+  "Data, Knowledge, Memory & Context": "Brain",
+  "Solution Architecture": "Layers",
+  "Integration & Process Embedding": "Plug",
+  "Execution & Pilot Design": "Play",
+  "Trust, Risk, Governance & Control": "Shield",
+  "Measurement & Learning Loop": "BarChart3",
+  "Rollout, Adoption & Scaling": "Rocket",
 };
 
 export interface FilterState {
@@ -116,11 +119,12 @@ export interface FilterState {
 export const FEATURED_PATH = [
   "lead-response-delay",
   "auto-follow-up-leads",
+  "decision-authority-matrix",
+  "knowledge-base-rag",
   "llm-decision-layer",
   "crm-integration",
-  "session-memory",
-  "event-driven-execution",
+  "pilot-scope-design",
   "human-in-the-loop",
   "roi-tracking",
-  "rollout-pilot-team",
+  "rollout-phased-deployment",
 ];
