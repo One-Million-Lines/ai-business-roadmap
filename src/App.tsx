@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { FloatingNav } from "@/components/FloatingNav";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -244,6 +245,7 @@ export default function App() {
         <span className="mx-1">·</span>
         <span>v{APP_VERSION}</span>
       </footer>
+      <FloatingNav position="bottom-right" />
     </TooltipProvider>
   );
 }
